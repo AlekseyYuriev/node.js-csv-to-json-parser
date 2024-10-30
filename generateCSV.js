@@ -4,7 +4,7 @@ const readline = require("readline");
 function generateRandomNumberOfRows(separator, numberOfColumns, numberOfRows) {
   let row = "";
   for (let i = 0; i < numberOfColumns; i++) {
-    row += `veryLongRandomWord${separator}`;
+    row += `veryLongRandomWord${i}${separator}`;
   }
   return (row + "\n").repeat(numberOfRows);
 }
@@ -25,7 +25,7 @@ async function readFirstLine(fileName) {
 }
 
 readFirstLine("CSV_Files/mock.csv").then((data) => {
-  const largeCSVFile = "CSV_Files/large.csv";
+  const largeCSVFile = "CSV_Files/source.csv";
   const separator = ",";
   const numberOfColumns = data.split(separator).length;
   const randomNumberOfRows = generateRandomNumberOfRows(
@@ -38,7 +38,7 @@ readFirstLine("CSV_Files/mock.csv").then((data) => {
 
   let fileSize = fs.statSync(largeCSVFile).size;
 
-  while (fileSize < 10 * 1024 * 1024 * 1024) {
+  while (fileSize < 1 * 1024 * 1024 * 1024) {
     fs.appendFileSync(largeCSVFile, randomNumberOfRows);
     fileSize = fs.statSync(largeCSVFile).size;
   }
