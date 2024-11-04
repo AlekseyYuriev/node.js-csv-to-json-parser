@@ -38,8 +38,13 @@ readFirstLine("CSV_Files/mock.csv").then((data) => {
 
   let fileSize = fs.statSync(largeCSVFile).size;
 
-  while (fileSize < 1 * 1024 * 1024 * 1024) {
+  while (fileSize < 10 * 1024 * 1024 * 1024) {
     fs.appendFileSync(largeCSVFile, randomNumberOfRows);
     fileSize = fs.statSync(largeCSVFile).size;
   }
+  console.log(
+    "Source file has been generated with size: ",
+    (fileSize / 1024 / 1024 / 1024).toFixed(2),
+    " GB"
+  );
 });

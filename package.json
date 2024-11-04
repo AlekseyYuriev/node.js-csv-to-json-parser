@@ -4,15 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node csv2json.js --sourceFile ./CSV_Files/source.csv --resultFile ./CSV_Files/result.json --separator ;",
+    "generate": "node generateCSV.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@faker-js/faker": "^9.0.3"
-  },
-  "dependencies": {
-    "uuid": "^11.0.2"
-  }
+  "license": "ISC"
 }
