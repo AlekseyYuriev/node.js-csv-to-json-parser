@@ -13,4 +13,4 @@ https://docs.google.com/document/d/15tyXbq8f1IeTWHHqPXXr8RJenX7a7RFaldXhomSlfgw/
 
 <h2>3. Additional features</h2>
 
-It is also possible to provide a separator to the 'start' script adding '--separator ,', '--separator ;' or '--separator <span>&nbsp</span>'. But please check, that your mock.csv and generateCSV.js files use the same one.
+It is also possible to provide a separator to the 'start' script adding '--separator ,', '--separator ;' or '--separator  '. But please check, that your mock.csv and generateCSV.js files use the same one.
